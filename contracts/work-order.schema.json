@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hostproto.invalid/a2a/work-order.schema.json",
+  "title": "hostproto-work-order/v1 — the A2A profile payload for this worker",
+  "description": "The one DataPart a client sends to delegate an assignment. This is the worker's contract, not a HostProto semantic: HostProto objects appear verbatim in the task's artifacts and status messages. A work order that validates but is not yet executable (no url) is an interruption (INPUT_REQUIRED), not a rejection.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "skill"],
+  "properties": {
+    "schema_version": { "const": "hostproto.work-order/v1" },
+    "skill": { "const": "inspect_web_application" },
+    "url": { "type": "string", "pattern": "^https?://" },
+    "max_pages": { "type": "integer", "minimum": 1, "maximum": 10, "default": 3 },
+    "projections": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": { "enum": ["state", "dom", "console", "network", "targets", "dialogs", "screenshot"] },
+      "default": ["state", "targets", "console", "screenshot"]
+    }
+  }
+}

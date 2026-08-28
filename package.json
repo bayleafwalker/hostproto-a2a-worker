@@ -1,0 +1,30 @@
+{
+  "name": "hostproto-a2a-worker",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "HostProto A2A host-worker: one Agent Card, one skill, tasks projected from domain runs, HostProto MCP adapter used internally",
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "schemas": "node scripts/fetch-schemas.mjs",
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "start": "tsx src/main.ts"
+  },
+  "dependencies": {
+    "@a2a-js/sdk": "1.1.0",
+    "@modelcontextprotocol/client": "2.0.0",
+    "@modelcontextprotocol/core": "2.0.0",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "express": "5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "5.0.3",
+    "@types/node": "24.10.0",
+    "tsx": "4.23.12",
+    "typescript": "5.9.3",
+    "vitest": "4.1.11"
+  }
+}

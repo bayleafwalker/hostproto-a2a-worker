@@ -1,0 +1,18 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  worker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with: {repository: bayleafwalker/hostproto-mcp-playwright, path: hostproto-mcp-playwright}
+      - uses: actions/setup-node@v4
+        with: {node-version: 22}
+      - run: npm ci
+      - run: npm run schemas
+      - run: npx tsc -p tsconfig.json
+      - run: npm ci && npx playwright install --with-deps chromium-headless-shell && npm run schemas
+        working-directory: hostproto-mcp-playwright
+      - run: npm test
+        env: {HOSTPROTO_MCP_DIR: "${{ github.workspace }}/hostproto-mcp-playwright"}
