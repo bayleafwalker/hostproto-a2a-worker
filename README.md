@@ -46,4 +46,4 @@ PORT=4310 npm start                    # card at http://127.0.0.1:4310/.well-kno
 ```
 
 Clients must declare the extension on each call (`A2A-Extensions:
-https://hostproto.invalid/a2a/work-order/v1`); the server refuses otherwise.
+https://bayleafwalker.github.io/hostproto-a2a-worker/a2a/work-order/v1`); the server refuses otherwise.

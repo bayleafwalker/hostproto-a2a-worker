@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://hostproto.invalid/a2a/work-order.schema.json",
+  "$id": "https://bayleafwalker.github.io/hostproto-a2a-worker/contracts/work-order.schema.json",
   "title": "hostproto-work-order/v1 — the A2A profile payload for this worker",
   "description": "The one DataPart a client sends to delegate an assignment. This is the worker's contract, not a HostProto semantic: HostProto objects appear verbatim in the task's artifacts and status messages. A work order that validates but is not yet executable (no url) is an interruption (INPUT_REQUIRED), not a rejection.",
   "type": "object",

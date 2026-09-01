@@ -3,7 +3,7 @@
 import { randomUUID } from 'node:crypto';
 import { Role, TaskState, type Artifact, type Message, type Part, type Task, type TaskStatus } from '@a2a-js/sdk';
 
-export const EXTENSION_URI = 'https://hostproto.invalid/a2a/work-order/v1';
+export const EXTENSION_URI = 'https://bayleafwalker.github.io/hostproto-a2a-worker/a2a/work-order/v1';
 type J = Record<string, unknown>;
 
 export const dataPart = (value: unknown, metadata?: J): Part => ({ content: { $case: 'data', value }, metadata, filename: '', mediaType: 'application/json' });
